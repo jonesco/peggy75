@@ -27,4 +27,5 @@ If you change `Code.gs` later, use Deploy > Manage deployments > edit > New vers
 - Opening a guest’s link counts as “Opened”. The host page’s View button adds `peek=1`, so checking a link yourself doesn’t count.
 - Guests only ever see their own name, seats and reply. Contact details and the list need the passphrase.
 - The repo is public, so keep guest names and numbers in the sheet, not in files here.
+- The text-message preview is `og/card.png`, a 1200 by 630 screenshot of `og/card.html`. If the date, time or place changes, update both pages and re-shoot it.
 - Tests: `npm test` runs `Code.gs` against a fake sheet and checks the preview store.
