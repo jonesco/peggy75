@@ -4,6 +4,7 @@
   "description": "Invite and RSVP site for Peggy's 75th",
   "scripts": {
     "test": "node --test test/backend.test.js",
-    "start": "npx http-server -p 8080 -c-1 ."
+    "start": "npx http-server -p 8080 -c-1 .",
+    "bump": "node -e \"const fs=require('fs'),v=new Date().toISOString().replace(/\\\\D/g,'').slice(0,12);for(const f of ['index.html','host.html'])fs.writeFileSync(f,fs.readFileSync(f,'utf8').replace(/\\\\?v=\\\\d+/g,'?v='+v));console.log('v='+v)\""
   }
 }

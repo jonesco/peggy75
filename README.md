@@ -28,4 +28,5 @@ If you change `Code.gs` later, use Deploy > Manage deployments > edit > New vers
 - Guests only ever see their own name, seats and reply. Contact details and the list need the passphrase.
 - The repo is public, so keep guest names and numbers in the sheet, not in files here.
 - The text-message preview is `og/card.png`, a 1200 by 630 screenshot of `og/card.html`. If the date, time or place changes, update both pages and re-shoot it.
+- After changing CSS or JS, run `npm run bump` before committing. It updates the `?v=` on the links so phones fetch the new files instead of a cached copy.
 - Tests: `npm test` runs `Code.gs` against a fake sheet and checks the preview store.
