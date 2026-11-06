@@ -24,7 +24,32 @@
     <p class="eyebrow">Please join us to celebrate</p>
 
     <div class="hero">
-      <p class="num" aria-hidden="true">75</p>
+      <div class="num-wrap" aria-hidden="true">
+        <svg class="doodle" viewBox="0 0 180 110" focusable="false">
+          <defs>
+            <filter id="wobble" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="1" seed="3"/>
+              <feDisplacementMap in="SourceGraphic" scale="3"/>
+            </filter>
+          </defs>
+          <g class="lines" filter="url(#wobble)">
+            <path pathLength="1" d="M42 7 C 30 11, 19 24, 15 40 C 11 56, 15 72, 25 83 C 29 87, 33 90, 37 91"/>
+            <path pathLength="1" class="thin" d="M36 13 C 26 22, 19 36, 18 52 C 17 66, 21 76, 28 84"/>
+            <path pathLength="1" d="M136 9 C 152 14, 163 28, 166 44 C 169 58, 167 72, 160 83 C 157 88, 152 90, 150 87 C 148 84, 152 81, 155 84"/>
+            <path pathLength="1" class="thin" d="M141 6 C 156 13, 168 30, 169 48 C 170 60, 167 68, 162 75"/>
+          </g>
+          <g class="sparks">
+            <g transform="translate(18 13) scale(1.25)"><path d="M0 -6 C 1 -1.5, 1.5 -1, 6 0 C 1.5 1, 1 1.5, 0 6 C -1 1.5, -1.5 1, -6 0 C -1.5 -1, -1 -1.5, 0 -6 Z"/></g>
+            <g transform="translate(160 18) scale(0.8)"><path d="M0 -6 C 1 -1.5, 1.5 -1, 6 0 C 1.5 1, 1 1.5, 0 6 C -1 1.5, -1.5 1, -6 0 C -1.5 -1, -1 -1.5, 0 -6 Z"/></g>
+            <g transform="translate(172 86) scale(1.05)"><path d="M0 -6 C 1 -1.5, 1.5 -1, 6 0 C 1.5 1, 1 1.5, 0 6 C -1 1.5, -1.5 1, -6 0 C -1.5 -1, -1 -1.5, 0 -6 Z"/></g>
+            <g transform="translate(6 84) scale(0.6)"><path d="M0 -6 C 1 -1.5, 1.5 -1, 6 0 C 1.5 1, 1 1.5, 0 6 C -1 1.5, -1.5 1, -6 0 C -1.5 -1, -1 -1.5, 0 -6 Z"/></g>
+            <g transform="translate(150 2) scale(0.5)"><path d="M0 -6 C 1 -1.5, 1.5 -1, 6 0 C 1.5 1, 1 1.5, 0 6 C -1 1.5, -1.5 1, -6 0 C -1.5 -1, -1 -1.5, 0 -6 Z"/></g>
+            <circle cx="30" cy="2" r="1.1"/>
+            <circle cx="176" cy="56" r="0.9"/>
+          </g>
+        </svg>
+        <p class="num">75</p>
+      </div>
       <h1>Peggy Jones</h1>
       <p class="sub">turns seventy-five</p>
     </div>
