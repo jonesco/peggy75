@@ -53,8 +53,9 @@
     return r ? r.value : "";
   }
 
+  // Party size shows from the start so guests see it; it only goes away for "Can't make it".
   function syncCount() {
-    countField.hidden = chosen() !== "yes";
+    countField.hidden = chosen() === "no";
   }
 
   function showDone(g) {
