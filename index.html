@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Peggy’s 75th Birthday</title>
+  <meta name="description" content="Join us to celebrate Peggy Jones turning seventy-five. Saturday, December 19, 2 to 4 PM, Schobels’ Restaurant, Columbus.">
+  <meta property="og:title" content="Peggy’s 75th Birthday">
+  <meta property="og:description" content="Saturday, December 19, 2 to 4 PM. Schobels’ Restaurant, Columbus. Tap to RSVP.">
+  <meta name="theme-color" content="#eef1ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1a17" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231f3a32'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='32' fill='%23d3ad63' text-anchor='middle'%3E75%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Jost:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <p class="banner" id="preview-banner" hidden>Preview mode. Replies are saved in this browser only.</p>
+
+  <main class="card center">
+    <p class="to" id="to" hidden></p>
+    <p class="eyebrow">Please join us to celebrate</p>
+
+    <div class="hero">
+      <p class="num" aria-hidden="true">75</p>
+      <h1>Peggy Jones</h1>
+      <p class="sub">turns seventy-five</p>
+    </div>
+
+    <hr class="rule">
+
+    <dl class="facts">
+      <div class="fact">
+        <dt>When</dt>
+        <dd><span class="big">Saturday, December 19</span>2 to 4 PM</dd>
+        <dd class="small"><a href="event.ics" download="peggy-75.ics">Add to calendar</a></dd>
+      </div>
+      <div class="fact">
+        <dt>Where</dt>
+        <dd><span class="big">Schobels’ Restaurant</span>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Schobels%27+Restaurant+2020+Milam+St+Columbus+TX+78934" target="_blank" rel="noopener">2020 Milam St, Columbus, TX 78934</a>
+        </dd>
+      </div>
+    </dl>
+
+    <section class="rsvp" aria-labelledby="rsvp-h">
+      <p class="eyebrow" id="rsvp-h">RSVP</p>
+
+      <form id="form" novalidate>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <h2>Will you join us?</h2>
+          <p class="by" id="by" hidden></p>
+
+          <div class="field" id="name-field" hidden>
+            <label class="label" for="name">Your name</label>
+            <input type="text" id="name" name="name" autocomplete="name" maxlength="120">
+          </div>
+
+          <fieldset class="choice">
+            <legend class="label">Your reply</legend>
+            <input type="radio" name="reply" id="r-yes" value="yes">
+            <label for="r-yes">Yes, I’ll be there</label>
+            <input type="radio" name="reply" id="r-no" value="no">
+            <label for="r-no">Can’t make it</label>
+          </fieldset>
+
+          <div class="field" id="count-field" hidden>
+            <span class="label" id="count-label">How many in your party</span>
+            <div class="stepper" role="group" aria-labelledby="count-label">
+              <button type="button" id="minus" aria-label="One fewer">−</button>
+              <output id="count" aria-live="polite">1</output>
+              <button type="button" id="plus" aria-label="One more">+</button>
+            </div>
+            <span class="by" id="count-hint" style="text-align:left;margin:0" hidden></span>
+          </div>
+
+          <div class="field">
+            <label class="label" for="note">A note <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+            <textarea id="note" name="note" maxlength="500"></textarea>
+          </div>
+
+          <button class="btn block" type="submit" id="send">Send reply</button>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <div class="done" id="done" hidden>
+        <p class="big" id="done-big"></p>
+        <p id="done-small"></p>
+        <button class="btn ghost small" type="button" id="change">Change reply</button>
+      </div>
+    </section>
+
+    <p class="foot" id="foot"></p>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="assets/api.js"></script>
+  <script src="assets/invite.js"></script>
+</body>
+</html>
