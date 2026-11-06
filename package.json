@@ -1,0 +1,9 @@
+{
+  "name": "peggy75",
+  "private": true,
+  "description": "Invite and RSVP site for Peggy's 75th",
+  "scripts": {
+    "test": "node --test test/backend.test.js",
+    "start": "npx http-server -p 8080 -c-1 ."
+  }
+}
