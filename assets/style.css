@@ -27,6 +27,14 @@
   color-scheme: dark;
 }
 
+/* Bodoni's hairlines vanish on white at text sizes. Medium weight and a small optical
+   size keep the thin strokes sturdy. The big 75 keeps its full contrast. */
+.to, .sub, .fact .big, .rsvp h2, .done .big, .stepper output, .totals dd, .panel h2, .guest .note {
+  font-weight: 500;
+  font-variation-settings: "opsz" 14;
+}
+h1 { font-variation-settings: "opsz" 28; }
+
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
@@ -130,7 +138,6 @@ h1 {
 .rsvp .eyebrow { text-align: center; }
 .rsvp h2 {
   font-family: var(--display);
-  font-weight: 400;
   font-size: 28px;
   line-height: 1.15;
   margin: 0;
@@ -228,7 +235,7 @@ textarea { min-height: 88px; resize: vertical; }
 @media (max-width: 480px) { .totals { grid-template-columns: repeat(2, 1fr); } }
 
 .panel { border-top: 1px solid var(--rule); padding-top: 20px; display: flex; flex-direction: column; gap: 14px; }
-.panel h2 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 0; }
+.panel h2 { font-family: var(--display); font-size: 24px; margin: 0; }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .grid2 .span { grid-column: 1 / -1; }
 @media (max-width: 480px) { .grid2 { grid-template-columns: 1fr; } }
