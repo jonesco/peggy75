@@ -2,7 +2,7 @@
 window.PEGGY_CONFIG = {
   // Paste the Apps Script web app URL here (see README, step 5).
   // Leave empty to run in preview mode, where replies stay in your own browser.
-  apiUrl: "",
+  apiUrl: "https://script.google.com/macros/s/AKfycbzIpmTwLYsqqHzkbmsYgcCdm-KRLDo_Wuoj5R6n1lCUzjyAqUOVKo1mKDl29-fVtNGa/exec",
 
   // Optional. Shown on the invite as "Kindly reply by …". Example: "December 5".
   rsvpBy: "",
