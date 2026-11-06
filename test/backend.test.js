@@ -102,11 +102,11 @@ test("add, open, rsvp, and see it on the list", () => {
 
   const r = post({ action: "rsvp", token, reply: "yes", attending: 5, note: "=HYPERLINK(\"x\")" });
   assert.equal(r.ok, true);
-  assert.equal(r.guest.attending, 2, "capped at seats");
+  assert.equal(r.guest.attending, 5, "guests may bring more than their seats");
 
   list = post({ action: "list", passphrase: "cake" }).guests;
   assert.equal(list[0].reply, "yes");
-  assert.equal(list[0].attending, 2);
+  assert.equal(list[0].attending, 5);
   assert.equal(list[0].phone, "+1 512 555 0100");
   assert.ok(list[0].opened && list[0].replied);
   assert.equal(list[0].note, "=HYPERLINK(\"x\")", "stored as text, not a formula");
@@ -177,9 +177,15 @@ test("browser preview store behaves like the backend", async () => {
   assert.equal((await api.list("preview")).guests.find((g) => g.token === t).opened, "");
   await api.guest(t);
   const r = await api.rsvp({ token: t, reply: "yes", attending: 9 });
-  assert.equal(r.guest.attending, 2);
+  assert.equal(r.guest.attending, 9);
   const walkin = await api.rsvp({ name: "Walk In", reply: "no" });
   assert.ok(walkin.token);
   await api.remove("preview", t);
   assert.equal((await api.list("preview")).guests.some((g) => g.token === t), false);
+});
+
+test("party size starts from seats but tops out at 10", () => {
+  const { post } = loadBackend();
+  const token = post({ action: "add", passphrase: "cake", name: "Dale", seats: 2 }).guest.token;
+  assert.equal(post({ action: "rsvp", token, reply: "yes", attending: 50 }).guest.attending, 10);
 });

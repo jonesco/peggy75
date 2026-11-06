@@ -81,6 +81,7 @@
 
     var bits = [];
     if (g.seats) bits.push(g.seats + (g.seats === 1 ? " seat" : " seats"));
+    if (g.reply === "yes" && g.seats && g.attending > g.seats) bits.push((g.attending - g.seats) + " more than planned");
     if (g.replied) bits.push("replied " + day(g.replied));
     else if (g.opened) bits.push("opened " + day(g.opened));
     if (g.source === "open link") bits.push("via open link");

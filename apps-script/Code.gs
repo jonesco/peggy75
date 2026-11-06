@@ -13,7 +13,7 @@ var SHEET_NAME = "Guests";
 var HEADERS = ["Token", "Name", "Email", "Phone", "Seats", "Reply", "Attending", "Note", "Opened", "Replied", "Added", "Source"];
 var COL = {};
 HEADERS.forEach(function (h, i) { COL[h] = i; });
-var MAX_OPEN_LINK_PARTY = 10;
+var MAX_PARTY = 10; // guests may bring more than the seats you set, up to this
 
 /** Run once from the editor. Creates the Guests tab with headers. */
 function setup() {
@@ -85,8 +85,7 @@ function rsvp_(b) {
     r = findRow_(read_(), token);
   }
 
-  var max = r.g.seats > 0 ? r.g.seats : MAX_OPEN_LINK_PARTY;
-  var attending = reply === "yes" ? Math.max(1, Math.min(max, parseInt(b.attending, 10) || 1)) : 0;
+  var attending = reply === "yes" ? Math.max(1, Math.min(MAX_PARTY, parseInt(b.attending, 10) || 1)) : 0;
   writeCell_(r.row, "Reply", reply);
   writeCell_(r.row, "Attending", attending);
   writeCell_(r.row, "Note", note);

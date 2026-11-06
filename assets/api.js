@@ -82,9 +82,8 @@
             g = { token: newToken(), name: name, email: clean(b.email), phone: "", seats: 0, reply: "", attending: 0, note: "", opened: now, replied: "", added: now, source: "open link" };
             rows.push(g);
           }
-          var max = g.seats > 0 ? g.seats : 10;
           g.reply = reply;
-          g.attending = reply === "yes" ? Math.max(1, Math.min(max, parseInt(b.attending, 10) || 1)) : 0;
+          g.attending = reply === "yes" ? Math.max(1, Math.min(10, parseInt(b.attending, 10) || 1)) : 0;
           g.note = clean(b.note, 500);
           g.replied = now;
           save(rows);

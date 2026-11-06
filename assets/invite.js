@@ -6,7 +6,7 @@
   var $ = function (id) { return document.getElementById(id); };
 
   var form = $("form"), done = $("done"), status = $("status"), send = $("send");
-  var countField = $("count-field"), countOut = $("count"), hint = $("count-hint");
+  var countField = $("count-field"), countOut = $("count");
   var MINE = "peggy75-my-token";
 
   var params = new URLSearchParams(location.search);
@@ -31,13 +31,14 @@
     foot.append(a);
   }
 
-  function maxSeats() { return guest && guest.seats > 0 ? guest.seats : 10; }
+  // Seats set by the host are the starting count. Guests can bring more, up to 10.
+  var MAX_PARTY = 10;
 
   function setCount(n) {
-    count = Math.max(1, Math.min(maxSeats(), n));
+    count = Math.max(1, Math.min(MAX_PARTY, n));
     countOut.textContent = String(count);
     $("minus").disabled = count <= 1;
-    $("plus").disabled = count >= maxSeats();
+    $("plus").disabled = count >= MAX_PARTY;
   }
 
 
@@ -76,7 +77,6 @@
     }
     setCount(g.attending || (g.seats > 0 ? g.seats : 1));
     $("note").value = g.note || "";
-    if (g.seats > 1) { hint.textContent = "We’ve saved " + g.seats + " seats for you."; hint.hidden = false; }
     syncCount();
   }
 
